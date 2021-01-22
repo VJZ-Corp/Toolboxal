@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="Toolboxal_UI">
-	<file>Toolboxal.ico</file>
+    <qresource prefix="/UI">
+        <file>Toolboxal.ico</file>
     </qresource>
 </RCC>

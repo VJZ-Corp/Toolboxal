@@ -13,4 +13,5 @@ MOC_DIR += .
 OBJECTS_DIR += debug
 UI_DIR += .
 RCC_DIR += .
+RESOURCES = toolboxal_ui.qrc
 include(Toolboxal.pri)

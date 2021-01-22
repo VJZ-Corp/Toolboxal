@@ -10,6 +10,7 @@
 
 #include <QtWidgets/QWidget>
 #include "ui_toolboxal_ui.h"
+#include "databus.h"
 
 class Toolboxal_UI : public QWidget
 {
@@ -17,6 +18,11 @@ class Toolboxal_UI : public QWidget
 
 public:
     Toolboxal_UI(QWidget *parent = Q_NULLPTR);
+    virtual ~Toolboxal_UI() {}
+
+private slots:
+    void convert_Radix();
+    void swap_Radix();
 
 private:
     Ui::Toolboxal_UIClass ui;
