@@ -10,7 +10,7 @@
 
 #include <QtWidgets/QWidget>
 #include "ui_toolboxal_ui.h"
-#include "databus.h"
+#include "core.h"
 
 class Toolboxal_UI : public QWidget
 {
