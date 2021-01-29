@@ -23,8 +23,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="python\radix.py" />
     <None Include="python\databus.tmp" />
+    <None Include="scripts\radix.py" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core.cpp">

@@ -10,11 +10,20 @@
 
 #include <fstream>
 #include <string>
+#include <cmath>
+#include <algorithm> 
+#include <cctype>    
+
+struct RadioButtonOptions
+{
+	bool i_useBit; bool i_useBin; bool i_useBoth;
+	bool o_useBit; bool o_useBin; bool o_useBoth;
+};
 
 namespace Core
 {
 	std::string Radix_Converter(std::string num, int origin, int base);
+	std::string Magnitude_Converter(std::string num, int origin, int destination, RadioButtonOptions options);
 }
-
 
 #endif //CORE_H

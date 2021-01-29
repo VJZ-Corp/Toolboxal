@@ -14,23 +14,18 @@ def base(number, origin, radix):
              if val == value:
                  return key
     
-    letterbasenumdict = { 10 : "a", 11 : "b", 12 : "c", 13 : "d", 14 : "e", 
-                          15 : "f", 16 : "g", 17 : "h", 18 : "i", 19 : "j", 
-                          20 : "k", 21 : "l", 22 : "m", 23 : "n", 24 : "o", 
-                          25 : "p", 26 : "q", 27 : "r", 28 : "s", 29 : "t", 
-                          30 : "u", 31 : "v", 32 : "w", 33 : "x", 34 : "y", 
-                          35 : "z" }
+    letterbasenumdict = { 10 : "A", 11 : "B", 12 : "C", 13 : "D", 14 : "E", 
+                          15 : "F", 16 : "G", 17 : "H", 18 : "I", 19 : "J", 
+                          20 : "K", 21 : "L", 22 : "M", 23 : "N", 24 : "O", 
+                          25 : "P", 26 : "Q", 27 : "R", 28 : "S", 29 : "T", 
+                          30 : "U", 31 : "V", 32 : "W", 33 : "X", 34 : "Y", 
+                          35 : "Z" }
 
     # Prevent invalid characters from being entered
     try:
-        if origin == radix: # If the radices match, no need to perform any logic
-            return number
-        elif radix == 1:
-            baseI = ""
-            for i in range(base(number, origin, 10)):
-                baseI += '1'
+        if ' ' in number:
+            raise Exception
         elif origin > 10:
-
             baseI = 0
             number = str(number)[::-1]
 
@@ -46,7 +41,6 @@ def base(number, origin, radix):
             baseI = base(baseI, 10, radix) 
 
         elif origin == 10:
-
             j = int(number)
             baseI = ""
            
@@ -63,7 +57,7 @@ def base(number, origin, radix):
 
         else:
             baseI = 0
-            number = str(number)
+            number = str(number)[::-1]
         
             for i in range(len(number) - 1, -1, -1):
                 baseI += origin ** i * int(number[i])
@@ -71,15 +65,14 @@ def base(number, origin, radix):
             baseI = str(baseI)
             baseI = base(baseI, 10, radix)
         
-        return ' '.join([baseI[i:i+72] for i in range(0, len(baseI), 72)]) # insert space every 72 characters for textbox formatting
+        return baseI 
 
     except:
-        return "Invalid symbols present in specified number."
+        return "Invalid string literal detected for specified radix."
 
 if __name__ == "__main__":
+    dir = os.path.dirname(__file__)
+    file = os.path.join(dir, '../databus.tmp')
 
-    dirname = os.path.dirname(__file__)
-    filename = os.path.join(dirname, '../databus.tmp')
-
-    with open(filename, 'w') as temp:
+    with open(file, 'w') as temp:
         temp.write(base(sys.argv[1], int(sys.argv[2]), int(sys.argv[3])))

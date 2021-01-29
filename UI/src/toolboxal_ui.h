@@ -9,6 +9,8 @@
 #define TOOLBOXAL_UI_H
 
 #include <QtWidgets/QWidget>
+#include <QMessageBox>
+#include <QTextOption>
 #include "ui_toolboxal_ui.h"
 #include "core.h"
 
@@ -18,11 +20,20 @@ class Toolboxal_UI : public QWidget
 
 public:
     Toolboxal_UI(QWidget *parent = Q_NULLPTR);
-    virtual ~Toolboxal_UI() {}
+    virtual ~Toolboxal_UI() = default;
 
 private slots:
-    void convert_Radix();
-    void swap_Radix();
+    void on_convertRadix_clicked();
+    void on_swapRadix_clicked();
+    void on_convertMagnitude_clicked();
+
+    void input_Bit_Checked();
+    void input_Binary_Checked();
+    void input_Both_Checked();
+
+    void output_Bit_Checked();
+    void output_Binary_Checked();
+	void output_Both_Checked();
 
 private:
     Ui::Toolboxal_UIClass ui;
