@@ -35,7 +35,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -112,7 +112,7 @@
       <rect>
        <x>430</x>
        <y>380</y>
-       <width>431</width>
+       <width>441</width>
        <height>41</height>
       </rect>
      </property>
@@ -122,7 +122,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Author:             Copyright © 2021 VJZ Corporation.</string>
+      <string>Author:             Copyright © 2021 VJZ Corporation</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">

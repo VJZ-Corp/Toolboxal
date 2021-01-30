@@ -11,8 +11,12 @@
 #include <fstream>
 #include <string>
 #include <cmath>
+#include <cstdlib>
 #include <algorithm> 
 #include <cctype>    
+#include <iomanip>
+#include <locale>
+#include <sstream>
 
 struct RadioButtonOptions
 {

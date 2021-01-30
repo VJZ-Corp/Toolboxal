@@ -27,10 +27,10 @@ private slots:
     void on_swapRadix_clicked();
     void on_convertMagnitude_clicked();
 
+    // methods that change combobox text using radio buttons
     void input_Bit_Checked();
     void input_Binary_Checked();
     void input_Both_Checked();
-
     void output_Bit_Checked();
     void output_Binary_Checked();
 	void output_Both_Checked();

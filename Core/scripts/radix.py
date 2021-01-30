@@ -23,9 +23,8 @@ def base(number, origin, radix):
 
     # Prevent invalid characters from being entered
     try:
-        if ' ' in number:
-            raise Exception
-        elif origin > 10:
+        if origin > 10:
+            number = number.upper()
             baseI = 0
             number = str(number)[::-1]
 
@@ -47,7 +46,7 @@ def base(number, origin, radix):
             while j != 0:
                 if j % radix < 10:  # If (j / radix)'s remainder < 10, append (j / radix)'s remainder to base i
                     baseI += str(j % radix) 
-                else: # append the value for (j / radix)'s remainder
+                else: # Append the value for (j / radix)'s remainder
                     baseI += letterbasenumdict[j % radix]
 
                 j //= radix 
@@ -71,6 +70,7 @@ def base(number, origin, radix):
         return "Invalid string literal detected for specified radix."
 
 if __name__ == "__main__":
+    # Get relative paths for current file
     dir = os.path.dirname(__file__)
     file = os.path.join(dir, '../databus.tmp')
 

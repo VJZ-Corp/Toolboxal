@@ -22,6 +22,7 @@ Toolboxal_UI::Toolboxal_UI(QWidget *parent)
 
 void Toolboxal_UI::on_convertRadix_clicked()
 {
+	// convert QString to std::string
     QString num = ui.inputValueRadix->text();
     QByteArray byteArr = num.toLocal8Bit();
     std::string c_str2 = byteArr.data();
@@ -55,7 +56,7 @@ void Toolboxal_UI::on_swapRadix_clicked()
 void Toolboxal_UI::on_convertMagnitude_clicked()
 {
 	int currentIData = ui.inputMagnitude->currentIndex();
-	int futureIData = ui.inputMagnitude->currentIndex();
+	int futureIData = ui.outputMagnitude->currentIndex();
 	
 	RadioButtonOptions radioOpt = {
 		ui.inputUseBit->isChecked(),  ui.inputUseBinary->isChecked(),  ui.inputUseBoth->isChecked(),
