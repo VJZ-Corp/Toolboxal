@@ -35,7 +35,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -833,7 +833,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>830</x>
-       <y>270</y>
+       <y>200</y>
        <width>271</width>
        <height>81</height>
       </rect>
@@ -1136,6 +1136,25 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="autoExclusive">
       <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="swapMagnitude">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>340</y>
+       <width>271</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>25</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>SWAP</string>
      </property>
     </widget>
    </widget>

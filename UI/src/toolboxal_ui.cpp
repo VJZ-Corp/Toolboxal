@@ -72,6 +72,35 @@ void Toolboxal_UI::on_convertMagnitude_clicked()
 		ui.outputData->setText(QString::fromStdString(result));
 }
 
+void Toolboxal_UI::on_swapMagnitude_clicked()
+{
+	// make all radio buttons checkable
+	ui.inputUseBinary->setCheckable(true);
+	ui.inputUseBit->setCheckable(true);
+	ui.inputUseBoth->setCheckable(true);
+	ui.outputUseBinary->setCheckable(true);
+	ui.outputUseBit->setCheckable(true);
+	ui.outputUseBoth->setCheckable(true);
+
+	// store check states in bool variable
+	bool tmpinput1 = ui.inputUseBinary->isChecked();
+	bool tmpinput2 = ui.inputUseBit->isChecked();
+	bool tmpinput3 = ui.inputUseBoth->isChecked();
+	
+	// swap check states
+	ui.inputUseBinary->setChecked(ui.outputUseBinary->isChecked());
+	ui.inputUseBit->setChecked(ui.outputUseBit->isChecked());
+	ui.inputUseBoth->setChecked(ui.outputUseBoth->isChecked());
+	ui.outputUseBinary->setChecked(tmpinput1);
+	ui.outputUseBit->setChecked(tmpinput2);
+	ui.outputUseBoth->setChecked(tmpinput3);
+
+	int tmpIndex = ui.inputMagnitude->currentIndex();
+	ui.inputData->setText(ui.outputData->toPlainText());
+	ui.inputMagnitude->setCurrentIndex(ui.outputMagnitude->currentIndex());
+	ui.outputMagnitude->setCurrentIndex(tmpIndex);
+}
+
 void Toolboxal_UI::input_Bit_Checked()
 {
 	if (ui.inputUseBit->isCheckable())
