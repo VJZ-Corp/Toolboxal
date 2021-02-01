@@ -5,7 +5,7 @@ Before getting started, please read this document as it contains all the necessa
 To clone Toolboxal, run 
 
 ```
-$ git clone https://github.comVJZ-Corp/Toolboxal
+$ git clone https://github.com/VJZ-Corp/Toolboxal
 ```
 in your current working directory. Alternatlvely, you can download a raw zip file and extracting it to your working directory. Almost all of Toolboxal is built using Visual Studio 2019. Therefore it is recommended that you have Visual Studio 10.0.40219.1 or later versions. Import the solution file (Toolboxal.sln) in the root directory by double-clicking it in file explorer or following the instructions provided by Visual Studio. Make sure to install [Qt VS Tools for Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=TheQtCompany.QtVisualStudioTools2019) or else many compiler and linkage errors will appear. *This assumes you have the latest version of Qt installed: Qt 6.0.0.*
 
