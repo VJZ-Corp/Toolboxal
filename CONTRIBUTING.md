@@ -1,5 +1,5 @@
 # Contributing Guidelines
-Before getting started, please read this document as it contains all the necessary information apropros of how to effectively contribute to Toolboxal. Any contributing expectations will be explicitly outlined in this markdown file. <b> All contributors must adhere to our code of conduct, which can be found at https://github.com/VJZ-Corp/Toolboxal/blob/master/CODE_OF_CONDUCT.md.
+Before getting started, please read this document as it contains all the necessary information apropros of how to effectively contribute to Toolboxal. Any contributing expectations will be explicitly outlined in this markdown file. <b> All contributors must adhere to our code of conduct, which can be found at https://github.com/VJZ-Corp/Toolboxal/blob/master/CODE_OF_CONDUCT.md.</b>
 
 <h2>Cloning & Project Setup</h2>
 To clone Toolboxal, run 
