@@ -7,7 +7,11 @@ To clone Toolboxal, run
 ```
 $ git clone https://github.com/VJZ-Corp/Toolboxal
 ```
-in your current working directory. Alternatlvely, you can download a raw zip file and extract it to your working directory. Almost all of Toolboxal is built using Visual Studio 2019. Therefore it is recommended that you have Visual Studio 10.0.40219.1 or later versions. Import the solution file (Toolboxal.sln) in the root directory by double-clicking it in file explorer or following the instructions provided by Visual Studio. Make sure to install [Qt VS Tools for Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=TheQtCompany.QtVisualStudioTools2019) or else many compiler and linkage errors will appear. *This assumes you have the latest version of Qt installed: Qt 6.0.0.*
+in your current working directory. Alternatlvely, you can download a raw zip file and extract it to your working directory. 
+
+Almost all of Toolboxal is built using Visual Studio 2019. Therefore it is recommended that you have Visual Studio 10.0.40219.1 or later versions. Import the solution file (Toolboxal.sln) in the root directory by double-clicking it in file explorer or following the instructions provided by Visual Studio. 
+
+Make sure to install [Qt VS Tools for Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=TheQtCompany.QtVisualStudioTools2019) or else many compiler and linkage errors will appear. *This assumes you have the latest version of Qt installed: Qt 6.0.0.*
 
 <h2>Licensing</h2>
 Any code written must conform to our licensing convention, which shall be placed on the first line of every source code file except for auto-generated files. Below are some examples for different common languages.
