@@ -1,5 +1,5 @@
 # Contributing Guidelines
-Before getting started, please read this document as it contains all the necessary information in regards to how to effectively contribute to Toolboxal. Any contributing expectations will be explicitly outlined in this markdown file.
+Before getting started, please read this document as it contains all the necessary information apropros of how to effectively contribute to Toolboxal. Any contributing expectations will be explicitly outlined in this markdown file.
 
 <h2>Cloning & Project Setup</h2>
 To clone Toolboxal, run 
