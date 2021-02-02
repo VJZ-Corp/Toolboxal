@@ -17,7 +17,7 @@ Make sure to install [Qt VS Tools for Visual Studio 2019](https://marketplace.vi
 Any code written must conform to our licensing convention, which shall be placed on the first line of every source code file except for auto-generated files. Below are some examples for different common languages.
 
 C/C++:
-```
+```cpp
 // filename.cpp
 
 // Copyright (C) 2021 by VJZ Corporation.
@@ -28,7 +28,7 @@ C/C++:
 ```
 
 Java/C#:
-```
+```java
 // filename.java
 
 // Copyright (C) 2021 by VJZ Corporation.
@@ -39,7 +39,7 @@ import java.io.*;
 ```
 
 Python:
-```
+```python
 # filename.py
 
 # Copyright (C) 2021 by VJZ Corporation.
