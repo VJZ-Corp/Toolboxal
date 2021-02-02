@@ -5,13 +5,17 @@
 Toolboxal is a user-friendly application with its audience targeted mainly towards programmers and software engineers. It contains many useful tools and guides designed to speed up workflow, all of which are packaged into one portable application for anyone to run.
 
 <h2> Downloading & Installing Toolboxal </h2>
-Toolboxal's installer can be found in the "releases" tab on the right-hand side of the project's github page. Alternatively, you can go to https://github.com/VJZ-Corp/Toolboxal/releases to find the release binaries for Toolboxal. The release packages are named as follows: <b>toolboxal-vA.B.C_x64amd.exe</b>, with "A" being the major release version, "B" being the minor release version, and "C" being an internal commit hash. Unfortunately, Toolboxal only runs on x64 machines as VJZ Corporation is in the process of deprecating legacy x86 API. Installing Toolboxal should be straightforward: run the .exe file and follow the instructions on the wizard. The installer will setup every file Toolboxal needs to run and create a shortcut on the desktop (if specified). 
+Toolboxal's installer can be found in the "releases" tab on the right-hand side of the project's github page. Alternatively, you can go to https://github.com/VJZ-Corp/Toolboxal/releases to find the release binaries for Toolboxal. 
+
+The release packages are named as follows: <b>toolboxal-vA.B.C_x64amd.exe</b>, with "A" being the major release version, "B" being the minor release version, and "C" being an internal commit hash. Unfortunately, Toolboxal only runs on x64 machines as VJZ Corporation is in the process of deprecating legacy x86 API. 
+
+Installing Toolboxal should be straightforward: run the .exe file and follow the instructions on the wizard. The installer will setup every file Toolboxal needs to run and create a shortcut on the desktop (if specified). 
 
 <h2>Usage</h2>
-<h3>Radix Converter</h3>
+<h4>Radix Converter</h4>
 The radix converter is a tool that can convert between radices. Simply enter your original number and its radix, the radix you want to convert to, and you are all set. Toolboxal will calculate the result based on your inputs. Toolboxal only supports 35 radices from base 2 to base 36. You can enter a mixture of uppercase and lowercase letters, but Toolboxal treats both cases as the same.
 
-<h3>Data Storage Units Converter</h3>
+<h4>Data Storage Units Converter</h4>
 The data storage unit converter will convert between all supported prefixes of any data unit (SI, binary, bits, bytes). You can find all the available data storage units that Toolboxal supports here: https://en.wikipedia.org/wiki/Orders_of_magnitude_(data). Simply enter your current unit, the unit you are trying to convert to, and Toolboxal will automatically convert the data for you. Furthermore, you can check the radio buttons to use different systems of units.
 
 <h2>Contributing</h2>
