@@ -1,10 +1,13 @@
-# radix.py
+# bitwise.py
 
 # Copyright (C) 2021 by VJZ Corporation.
 # SPDX-License-Identifier: GPL-3.0-only
 
-import sys
 import os
+import sys
+
+g_Radix = 0 
+g_errorMsg = "Invalid string literal detected for specified radix."
 
 def base(number, origin, radix):
 
@@ -69,10 +72,83 @@ def base(number, origin, radix):
     except:
         return "Invalid string literal detected for specified radix."
 
+def AND(a, b):
+    return a & b
+
+def OR(a, b):
+    return a | b
+
+def NOT(a):
+    return ~a
+
+def NOR(a, b):
+    return NOT(OR(a, b)) 
+
+def NAND(a, b):
+    return NOT(AND(a, b))
+
+def XOR(a, b):
+    return a ^ b
+
+def XNOR(a, b):
+    return NOT(XOR(a, b))
+
+def checkBase(num):
+
+    global g_Radix
+    global g_errorMsg
+
+    try:
+        if num[0:2] == "0b":
+            g_Radix = 2
+            return int(base(num[2:len(num)], 2, 10))
+        elif num[0:2] == "0x":
+            g_Radix = 16
+            return int(base(num[2:len(num)], 16, 10))
+    except:
+        return g_errorMsg
+
+    try:
+        g_Radix = 10
+        return int(num)
+    except:
+        return g_errorMsg
+
 if __name__ == "__main__":
-    # Get relative paths for current file
+
     dir = os.path.dirname(__file__)
     file = os.path.join(dir, '../databus.tmp')
+    
+    argv1 = checkBase(sys.argv[1])
+    argv2 = checkBase(sys.argv[2])
+
+    if argv1 == g_errorMsg or argv2 == g_errorMsg:
+        temp = open(file, 'w')
+        temp.write(g_errorMsg)
+        temp.close()
+        sys.exit()
+
+    if sys.argv[3] == "AND":
+        result = AND(argv1, argv2)
+    elif sys.argv[3] == "OR":
+        result = OR(argv1, argv2)
+    elif sys.argv[3] == "NOT":
+        result = NOT(argv1)
+    elif sys.argv[3] == "NOR":
+        result = NOR(argv1, argv2)
+    elif sys.argv[3] == "NAND":
+        result = NAND(argv1, argv2)
+    elif sys.argv[3] == "XNOR":
+        result = XNOR(argv1, argv2)
+    elif sys.argv[3] == "XOR":
+        result = XOR(argv1, argv2)
+
+    result = base(result, 10, g_Radix)
+
+    if g_Radix == 2:
+        result = "0b" + str(result)
+    elif g_Radix == 16:
+        result = "0x" + str(result)
 
     with open(file, 'w') as temp:
-        temp.write(base(sys.argv[1], int(sys.argv[2]), int(sys.argv[3])))
+        temp.write(result)

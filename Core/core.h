@@ -26,6 +26,8 @@ struct RadioButtonOptions
 namespace Core
 {
 	std::string Radix_Converter(std::string num, int origin, int base);
+	std::string Logic_Gates(std::string num1, std::string num2, int gate);
+	std::string Bitshifter(std::string num1, std::string num2, int operation);
 	std::string Magnitude_Converter(std::string num, int origin, int destination, RadioButtonOptions options);
 }
 

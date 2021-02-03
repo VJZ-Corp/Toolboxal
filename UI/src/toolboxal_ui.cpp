@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: GPL-3.0-only	
 
 #include "toolboxal_ui.h"
+#include <QDebug>
 
 Toolboxal_UI::Toolboxal_UI(QWidget *parent)
     : QWidget(parent)
@@ -99,6 +100,32 @@ void Toolboxal_UI::on_swapMagnitude_clicked()
 	ui.inputData->setText(ui.outputData->toPlainText());
 	ui.inputMagnitude->setCurrentIndex(ui.outputMagnitude->currentIndex());
 	ui.outputMagnitude->setCurrentIndex(tmpIndex);
+}
+
+void Toolboxal_UI::on_calculateButton_clicked()
+{
+	int currentIData = ui.operatorCombobox->currentIndex();
+	std::string inputNum = ui.inputNum1->text().toLocal8Bit().data();
+	std::string inputNum2 = ui.inputNum2->text().toLocal8Bit().data();
+
+	if (currentIData <= 6)
+	{
+		std::string result = Core::Logic_Gates(inputNum, inputNum2, currentIData);
+
+		if (result == "Invalid string literal detected for specified radix.")
+			QMessageBox::warning(0, "Warning", QString::fromStdString(result));
+		else
+			ui.bitwiseResult->setText(QString::fromStdString(result));
+	}
+	else
+	{
+		std::string result = Core::Bitshifter(inputNum, inputNum2, currentIData);
+
+		if (result == "Invalid string literal detected for specified radix.")
+			QMessageBox::warning(0, "Warning", QString::fromStdString(result));
+		else
+			ui.bitwiseResult->setText(QString::fromStdString(result));
+	}
 }
 
 void Toolboxal_UI::input_Bit_Checked()

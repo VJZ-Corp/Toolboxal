@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="python\databus.tmp" />
+    <None Include="scripts\bitwise.py" />
     <None Include="scripts\radix.py" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

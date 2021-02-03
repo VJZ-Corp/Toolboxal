@@ -29,6 +29,8 @@ private slots:
     void on_convertMagnitude_clicked();
     void on_swapMagnitude_clicked();
 
+    void on_calculateButton_clicked();
+
     // methods that change combobox text using radio buttons
     void input_Bit_Checked();
     void input_Binary_Checked();

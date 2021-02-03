@@ -33,6 +33,55 @@ std::string Core::Radix_Converter(std::string num, int origin, int base)
 		return "Invalid string literal detected for specified radix.";
 }
 
+std::string Core::Logic_Gates(std::string num1, std::string num2, int gate)
+{
+	std::fstream tempfile;
+	tempfile.open("databus.tmp", std::fstream::in | std::fstream::out | std::fstream::trunc);
+
+	std::string cmd = "vendor\\python3.9_x64amd\\pythonw.exe scripts/bitwise.py " + num1 + " " + num2;
+	std::string result;
+
+	switch (gate)
+	{
+		case 0:  cmd += " AND";	  break;
+		case 1:	 cmd += " OR";	  break;
+		case 2:	 cmd += " NOT";	  break;
+		case 3:	 cmd += " NOR";   break;
+		case 4:	 cmd += " XOR";   break;
+		case 5:  cmd += " NAND";  break;
+		case 6:  cmd += " XNOR";  break;
+	}
+
+	system(cmd.c_str()); /* invoke python interpreter through system call */
+	std::getline(tempfile, result);
+
+	tempfile.close();
+	return result;
+}
+
+std::string Core::Bitshifter(std::string num1, std::string num2, int operation)
+{
+	std::fstream tempfile;
+	tempfile.open("databus.tmp", std::fstream::in | std::fstream::out | std::fstream::trunc);
+
+	std::string cmd = "vendor\\python3.9_x64amd\\pythonw.exe scripts/bitwise.py " + num1 + " " + num2;
+	std::string result;
+
+	switch (operation)
+	{
+		case 7:   cmd += " RIGHT";	 break;
+		case 8:	  cmd += " LEFT";	 break;
+		case 9:	  cmd += " ROT_L";	 break;
+		case 10:  cmd += " ROT_R";   break;
+	}
+
+	system(cmd.c_str()); /* invoke python interpreter through system call */
+	std::getline(tempfile, result);
+
+	tempfile.close();
+	return result;
+}
+
 std::string Core::Magnitude_Converter(std::string num, int origin, int destination, RadioButtonOptions options)
 {
 	// filter out any string literals that are not numbers
