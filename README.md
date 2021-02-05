@@ -19,5 +19,8 @@ The radix converter is a tool that can convert between radices. Simply enter you
 <h4>Data Storage Units Converter</h4>
 The data storage unit converter will convert between all supported prefixes of any data unit (SI, binary, bits, bytes). You can find all the available data storage units that Toolboxal supports here: https://en.wikipedia.org/wiki/Orders_of_magnitude_(data). Simply enter your current unit, the unit you are trying to convert to, and Toolboxal will automatically convert the data for you. Furthermore, you can check the radio buttons to use different systems of units.
 
+<h4>Bitwise Calculator</h4>
+The bitwise calculator supports calculations between all 7 common logic gates: AND, NAND, OR, NOR, XOR, XNOR, and NOT. It also supports bitwise rotation left (<<) and bitwise rotation right (>>), as well as circular bit rotation (left & right). You can input numbers in base 2 (must be prefixed with "0b"), base 16 (must be prefixed with "0x"), and base 10 (no prefix). The bitwise calculator currently does not support operations for negative numbers (i.e. inputs cannot contain the negative sign).
+
 <h2>Contributing</h2>
 The details of contributing are highlighted in "CONTRIBUTING.md" in the project's root directory. Please follow the contributing guidelines strictly as any abusers will be banned from contributing permanently. "CONTRIBUTING.md" can also be found here at https://github.com/VJZ-Corp/Toolboxal/blob/master/CONTRIBUTING.md.
