@@ -49,3 +49,17 @@ import sys
 import math
 ```
 
+<h2>External Python Libraries</h2>
+The use of external Python libraries is allowed. However, you must follow convention when it comes to integrating Python libraries into Toolboxal. First and foremost, to insure that the interpreter can resolve Python modules, you must place the actual package of the Python library in <em>vendor/python3.9_x64amd</em>. You can do this easily by:
+
+```
+$ cd vendor/python3.9_x64amd
+$ pip3 install package-name -t .
+```
+The library will generate package-info folder, which must be placed in the vendor directory. On Windows 10, open cmd.exe and type:
+
+```
+$ cd vendor/python3.9_x64amd
+$ xcopy /e packagename-info ../packagename-info
+$ rmdir /s /q packagename-info
+```
