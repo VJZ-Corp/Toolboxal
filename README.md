@@ -24,7 +24,7 @@ The bitwise calculator supports calculations between all 7 common logic gates: A
 
 <h4>Search Tool</h4>
 The search tool is used to search for errors and bugs that you may encounter within your development experience. The search tool uses Google to index search results and will return the top results as URLs in which you can click on to open. Sometimes, Google may give you an error or an exception, that is outside of Toolboxal's control and you should not report that particular exception as an issue. 
-
+<br>
 <em>Few things to consider: You are not allowed to enter an URL as your search query. The search tool is slow on purpose as to prevent Google from blocking your IP address. </em>
 
 <h2>Contributing</h2>
