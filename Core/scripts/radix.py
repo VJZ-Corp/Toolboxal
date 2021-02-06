@@ -14,15 +14,19 @@ def base(number, origin, radix):
              if val == value:
                  return key
     
+    isNegative = False
     letterbasenumdict = { 10 : "A", 11 : "B", 12 : "C", 13 : "D", 14 : "E", 
                           15 : "F", 16 : "G", 17 : "H", 18 : "I", 19 : "J", 
                           20 : "K", 21 : "L", 22 : "M", 23 : "N", 24 : "O", 
                           25 : "P", 26 : "Q", 27 : "R", 28 : "S", 29 : "T", 
                           30 : "U", 31 : "V", 32 : "W", 33 : "X", 34 : "Y", 
                           35 : "Z" }
-
+    
     # Prevent invalid characters from being entered
     try:
+        if str(number)[0] == "-":
+            isNegative = True
+            number = str(number)[1:len(str(number))]
         if origin > 10:
             number = number.upper()
             baseI = 0
@@ -63,7 +67,11 @@ def base(number, origin, radix):
                 baseI += origin ** i * int(number[i])
         
             baseI = base(baseI, 10, radix)
-        
+
+        if baseI == "":
+            return '0'
+        if isNegative:
+            return "-" + baseI
         return baseI 
 
     except:

@@ -30,6 +30,7 @@ private slots:
     void on_swapMagnitude_clicked();
 
     void on_calculateButton_clicked();
+    void on_operatorCombobox_currentIndexChanged();
 
     // methods that change combobox text using radio buttons
     void input_Bit_Checked();

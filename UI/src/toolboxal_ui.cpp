@@ -4,7 +4,6 @@
 // SPDX-License-Identifier: GPL-3.0-only	
 
 #include "toolboxal_ui.h"
-#include <QDebug>
 
 Toolboxal_UI::Toolboxal_UI(QWidget *parent)
     : QWidget(parent)
@@ -12,6 +11,7 @@ Toolboxal_UI::Toolboxal_UI(QWidget *parent)
     ui.setupUi(this);
     ui.resultValueRadix->setWordWrapMode(QTextOption::WrapMode::WrapAnywhere);
     ui.outputData->setWordWrapMode(QTextOption::WrapMode::WrapAnywhere);
+	ui.bitwiseResult->setWordWrapMode(QTextOption::WrapMode::WrapAnywhere);
 
     connect(ui.inputUseBit, SIGNAL(clicked()), SLOT(input_Bit_Checked()));
     connect(ui.inputUseBinary, SIGNAL(clicked()), SLOT(input_Binary_Checked()));
@@ -112,6 +112,16 @@ void Toolboxal_UI::on_calculateButton_clicked()
 	{
 		std::string result = Core::Logic_Gates(inputNum, inputNum2, currentIData);
 
+		if (result == "Toolboxal is currently experiencing some issues. Please try again.")
+			QMessageBox::warning(0, "Warning", QString::fromStdString(result));
+		else
+			ui.bitwiseResult->setText(QString::fromStdString(result));
+
+		if (result == "Input radices must match!")
+			QMessageBox::warning(0, "Warning", QString::fromStdString(result));
+		else
+			ui.bitwiseResult->setText(QString::fromStdString(result));
+
 		if (result == "Invalid string literal detected for specified radix.")
 			QMessageBox::warning(0, "Warning", QString::fromStdString(result));
 		else
@@ -121,11 +131,28 @@ void Toolboxal_UI::on_calculateButton_clicked()
 	{
 		std::string result = Core::Bitshifter(inputNum, inputNum2, currentIData);
 
+		if (result == "Toolboxal is currently experiencing some issues. Please try again.")
+			QMessageBox::warning(0, "Warning", QString::fromStdString(result));
+		else
+			ui.bitwiseResult->setText(QString::fromStdString(result));
+
 		if (result == "Invalid string literal detected for specified radix.")
 			QMessageBox::warning(0, "Warning", QString::fromStdString(result));
 		else
 			ui.bitwiseResult->setText(QString::fromStdString(result));
 	}
+}
+
+void Toolboxal_UI::on_operatorCombobox_currentIndexChanged()
+{
+	if (ui.operatorCombobox->currentIndex() == 2)
+	{
+		ui.inputNum2->setDisabled(true);
+		ui.inputNum2->clear();
+	}
+		
+	else
+		ui.inputNum2->setDisabled(false);
 }
 
 void Toolboxal_UI::input_Bit_Checked()

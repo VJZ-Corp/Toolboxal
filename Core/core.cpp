@@ -23,9 +23,24 @@ std::string Core::Radix_Converter(std::string num, int origin, int base)
 		std::string cmd = "vendor\\python3.9_x64amd\\pythonw.exe scripts/radix.py " + num + " " + std::to_string(origin) + " " + std::to_string(base);
 		std::string result;
 
-		system(cmd.c_str()); /* invoke python interpreter through system call */ 
-		std::getline(tempfile, result);
+		PROCESS_INFORMATION p_info;
+		STARTUPINFO s_info;
+		DWORD ReturnValue;
 
+		CA2T lpwstr(cmd.c_str());
+		memset(&s_info, 0, sizeof(s_info));
+		memset(&p_info, 0, sizeof(p_info));
+		s_info.cb = sizeof(s_info);
+
+		if (CreateProcess(NULL, lpwstr, NULL, NULL, 0, 0, NULL, NULL, &s_info, &p_info))
+		{
+			WaitForSingleObject(p_info.hProcess, 9999);
+			GetExitCodeProcess(p_info.hProcess, &ReturnValue);
+			CloseHandle(p_info.hProcess);
+			CloseHandle(p_info.hThread);
+		}
+
+		std::getline(tempfile, result);
 		tempfile.close();
 		return result;
 	}
@@ -45,18 +60,40 @@ std::string Core::Logic_Gates(std::string num1, std::string num2, int gate)
 	{
 		case 0:  cmd += " AND";	  break;
 		case 1:	 cmd += " OR";	  break;
-		case 2:	 cmd += " NOT";	  break;
+		case 2:	 cmd += "1 ";     break;
 		case 3:	 cmd += " NOR";   break;
 		case 4:	 cmd += " XOR";   break;
 		case 5:  cmd += " NAND";  break;
 		case 6:  cmd += " XNOR";  break;
 	}
 
-	system(cmd.c_str()); /* invoke python interpreter through system call */
-	std::getline(tempfile, result);
+	if (gate == 2)
+		cmd += "NOT";
 
+	PROCESS_INFORMATION p_info;
+	STARTUPINFO s_info;
+	DWORD ReturnValue;
+
+	CA2T lpwstr(cmd.c_str());
+	memset(&s_info, 0, sizeof(s_info));
+	memset(&p_info, 0, sizeof(p_info));
+	s_info.cb = sizeof(s_info);
+
+	if (CreateProcess(NULL, lpwstr, NULL, NULL, 0, 0, NULL, NULL, &s_info, &p_info))
+	{
+		WaitForSingleObject(p_info.hProcess, 9999);
+		GetExitCodeProcess(p_info.hProcess, &ReturnValue);
+		CloseHandle(p_info.hProcess);
+		CloseHandle(p_info.hThread);
+	}
+
+	std::getline(tempfile, result);
 	tempfile.close();
-	return result;
+
+	if (result != "")
+		return result;
+	else
+		return "Toolboxal is currently experiencing some issues. Please try again.";
 }
 
 std::string Core::Bitshifter(std::string num1, std::string num2, int operation)
@@ -69,17 +106,36 @@ std::string Core::Bitshifter(std::string num1, std::string num2, int operation)
 
 	switch (operation)
 	{
-		case 7:   cmd += " RIGHT";	 break;
-		case 8:	  cmd += " LEFT";	 break;
+		case 7:   cmd += " LEFT";	 break;
+		case 8:	  cmd += " RIGHT";	 break;
 		case 9:	  cmd += " ROT_L";	 break;
 		case 10:  cmd += " ROT_R";   break;
 	}
 
-	system(cmd.c_str()); /* invoke python interpreter through system call */
-	std::getline(tempfile, result);
+	PROCESS_INFORMATION p_info;
+	STARTUPINFO s_info;
+	DWORD ReturnValue;
 
+	CA2T lpwstr(cmd.c_str());
+	memset(&s_info, 0, sizeof(s_info));
+	memset(&p_info, 0, sizeof(p_info));
+	s_info.cb = sizeof(s_info);
+
+	if (CreateProcess(NULL, lpwstr, NULL, NULL, 0, 0, NULL, NULL, &s_info, &p_info))
+	{
+		WaitForSingleObject(p_info.hProcess, 9999);
+		GetExitCodeProcess(p_info.hProcess, &ReturnValue);
+		CloseHandle(p_info.hProcess);
+		CloseHandle(p_info.hThread);
+	}
+
+	std::getline(tempfile, result);
 	tempfile.close();
-	return result;
+
+	if (result != "")
+		return result;
+	else
+		return "Toolboxal is currently experiencing some issues. Please try again.";
 }
 
 std::string Core::Magnitude_Converter(std::string num, int origin, int destination, RadioButtonOptions options)

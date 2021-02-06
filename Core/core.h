@@ -16,6 +16,9 @@
 #include <iomanip>
 #include <locale>
 #include <sstream>
+#include <atlbase.h>
+#include <atlconv.h>
+#include <windows.h>
 
 struct RadioButtonOptions
 {

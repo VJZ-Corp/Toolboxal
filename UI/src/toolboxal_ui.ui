@@ -1289,7 +1289,7 @@ p, li { white-space: pre-wrap; }
      </item>
      <item>
       <property name="text">
-       <string>↻ (Rorate Bit Right)</string>
+       <string>↻ (Rotate Bit Right)</string>
       </property>
      </item>
     </widget>
