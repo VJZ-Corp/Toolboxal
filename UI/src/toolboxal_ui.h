@@ -32,6 +32,8 @@ private slots:
     void on_calculateButton_clicked();
     void on_operatorCombobox_currentIndexChanged();
 
+    void on_searchButton_clicked();
+
     // methods that change combobox text using radio buttons
     void input_Bit_Checked();
     void input_Binary_Checked();

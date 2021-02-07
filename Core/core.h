@@ -32,6 +32,7 @@ namespace Core
 	std::string Logic_Gates(std::string num1, std::string num2, int gate);
 	std::string Bitshifter(std::string num1, std::string num2, int operation);
 	std::string Magnitude_Converter(std::string num, int origin, int destination, RadioButtonOptions options);
+	std::string Search(std::string query, std::string querySize);
 }
 
 #endif //CORE_H

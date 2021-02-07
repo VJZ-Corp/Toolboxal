@@ -271,7 +271,7 @@ std::string Core::Magnitude_Converter(std::string num, int origin, int destinati
 		}
 
 		// toggle between scientific and fixed notation automatically
-		if (result > 1e6 || result < 1e-6)
+		if (std::abs(result) > 1e6 || std::abs(result) < 1e-6)
 			str_stream << std::scientific << result;
 		else
 			str_stream << std::fixed << std::setprecision(precision) << result;
@@ -280,4 +280,40 @@ std::string Core::Magnitude_Converter(std::string num, int origin, int destinati
 	}
 	else
 		return "Input can only contain numbers!";
+}
+
+std::string Core::Search(std::string query, std::string querySize)
+{
+	std::fstream tempfile;
+	tempfile.open("databus.tmp", std::fstream::in | std::fstream::out | std::fstream::trunc);
+
+	std::string cmd = "vendor\\python3.9_x64amd\\pythonw.exe scripts/crawler.py " + querySize + " \"" + query + "\"";
+	std::string line, result;
+
+	PROCESS_INFORMATION p_info;
+	STARTUPINFO s_info;
+	DWORD ReturnValue;
+
+	CA2T lpwstr(cmd.c_str());
+	memset(&s_info, 0, sizeof(s_info));
+	memset(&p_info, 0, sizeof(p_info));
+	s_info.cb = sizeof(s_info);
+
+	if (CreateProcess(NULL, lpwstr, NULL, NULL, 0, 0, NULL, NULL, &s_info, &p_info))
+	{
+		WaitForSingleObject(p_info.hProcess, 9999);
+		GetExitCodeProcess(p_info.hProcess, &ReturnValue);
+		CloseHandle(p_info.hProcess);
+		CloseHandle(p_info.hThread);
+	}
+
+	while (std::getline(tempfile, line))
+	{
+		if (line.empty()) break;
+		std::string hyperlink = "<a href=\"" + line + "\">" + line + "</a><br><br>";
+		result += hyperlink;
+	}
+
+	tempfile.close();
+	return result;
 }

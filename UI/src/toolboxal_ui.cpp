@@ -149,10 +149,17 @@ void Toolboxal_UI::on_operatorCombobox_currentIndexChanged()
 	{
 		ui.inputNum2->setDisabled(true);
 		ui.inputNum2->clear();
-	}
-		
+	} 
 	else
 		ui.inputNum2->setDisabled(false);
+}
+
+void Toolboxal_UI::on_searchButton_clicked()
+{
+	std::string query = ui.searchQuery->text().toLocal8Bit().data();
+	std::string size = ui.searchNumber->text().toLocal8Bit().data();
+	std::string results = Core::Search(query, size);
+	ui.searchResults->setText(QString::fromStdString(results));
 }
 
 void Toolboxal_UI::input_Bit_Checked()
