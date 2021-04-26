@@ -63,3 +63,10 @@ $ cd vendor/python3.9_x64amd
 $ xcopy /e packagename-info ../packagename-info
 $ rmdir /s /q packagename-info
 ```
+
+<h2>PR Formats</h2>
+To submit a pull request, you must include the following OR ELSE YOUR PR WILL BE IGNORED:
+- Bullet list
+              - Nested bullet
+                  - Sub-nested bullet etc
+          - Bullet list item 2 
