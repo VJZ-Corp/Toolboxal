@@ -64,9 +64,16 @@ $ xcopy /e packagename-info ../packagename-info
 $ rmdir /s /q packagename-info
 ```
 
-<h2>PR Formats</h2>
+<h2>Pull Request Formats</h2>
 To submit a pull request, you must include the following OR ELSE YOUR PR WILL BE IGNORED:
-- Bullet list
-              - Nested bullet
-                  - Sub-nested bullet etc
-          - Bullet list item 2 
+
+1. You must add the appropriate labels to your pull request.
+2. The title must briefly describe your changes.
+3. The body of the PR should contain:
+    - Which files you changed.
+    - The reason for changing the files.
+    - What issue or feature will you add to Toolboxal.
+4. It must not contain any of the following:
+    - Issues or features that have already been fixed or added in.
+    - Any form of advertisements.
+    - Any off-topic discussions.
