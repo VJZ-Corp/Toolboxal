@@ -2,7 +2,7 @@
 
 <img src="./logo.png" width="999">
 
-Toolboxal is a user-friendly application with its audience targeted mainly towards programmers and software engineers. It contains many useful tools and guides designed to speed up workflow, all of which are packaged into one portable application for anyone to run.
+Toolboxal is a user-friendly application with its audience targeted mainly towards programmers and software engineers. It contains many useful tools designed to speed up workflow, all of which are packaged into one portable application for anyone to run.
 
 <h2> Downloading & Installing Toolboxal </h2>
 
