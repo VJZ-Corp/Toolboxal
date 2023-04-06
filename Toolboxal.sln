@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI", "UI\UI.vcxproj", "{4BDA9418-8928-447B-A01E-A0ED225E132A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj", "{30274916-A450-4D5F-A2AF-9CB79BC6741C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BDA9418-8928-447B-A01E-A0ED225E132A}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{4BDA9418-8928-447B-A01E-A0ED225E132A}.Debug|x64.ActiveCfg = Debug|x64
+		{4BDA9418-8928-447B-A01E-A0ED225E132A}.Debug|x64.Build.0 = Debug|x64
+		{4BDA9418-8928-447B-A01E-A0ED225E132A}.Debug|x86.ActiveCfg = Debug|x64
+		{4BDA9418-8928-447B-A01E-A0ED225E132A}.Release|Any CPU.ActiveCfg = Release|x64
+		{4BDA9418-8928-447B-A01E-A0ED225E132A}.Release|x64.ActiveCfg = Release|x64
+		{4BDA9418-8928-447B-A01E-A0ED225E132A}.Release|x64.Build.0 = Release|x64
+		{4BDA9418-8928-447B-A01E-A0ED225E132A}.Release|x86.ActiveCfg = Release|x64
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Debug|x64.ActiveCfg = Debug|x64
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Debug|x64.Build.0 = Debug|x64
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Debug|x86.ActiveCfg = Debug|Win32
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Debug|x86.Build.0 = Debug|Win32
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Release|Any CPU.ActiveCfg = Release|Win32
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Release|x64.ActiveCfg = Release|x64
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Release|x64.Build.0 = Release|x64
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Release|x86.ActiveCfg = Release|Win32
+		{30274916-A450-4D5F-A2AF-9CB79BC6741C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45ED3EA2-739F-4F7B-85D2-A350AE379000}
+	EndGlobalSection
+EndGlobal
