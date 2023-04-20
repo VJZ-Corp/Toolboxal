@@ -27,7 +27,6 @@
     <None Include="scripts\radix.py" />
     <None Include="scripts\bitwise.py" />
     <None Include="scripts\crawler.py" />
-    <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core.cpp">

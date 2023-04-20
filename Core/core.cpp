@@ -12,7 +12,7 @@ bool isNumber(const std::string& str)
 	return end != str.c_str() && *end == '\0' && value != HUGE_VAL;
 }
 
-std::string Core::Radix_Converter(const std::string& num, int origin, int base)
+std::string Core::Radix_Converter(const std::string& num, const int origin, const int base)
 {
 	// filter out all whitespaces in given string
 	if (!(num.find(' ') != std::string::npos))
@@ -58,13 +58,26 @@ std::string Core::Logic_Gates(const std::string& num1, const std::string& num2, 
 
 	switch (gate)
 	{
-		case 0:  cmd += " AND";	  break;
-		case 1:	 cmd += " OR";	  break;
-		case 2:	 cmd += "1 NOT";  break;
-		case 3:	 cmd += " NOR";   break;
-		case 4:	 cmd += " XOR";   break;
-		case 5:  cmd += " NAND";  break;
-		case 6:  cmd += " XNOR";  break;
+	case 0:  
+		cmd += " AND";
+		break;
+	case 1:
+		cmd += " OR";
+		break;
+	case 2:
+		cmd += "1 NOT";
+		break;
+	case 3:
+		cmd += " NOR";
+		break;
+	case 4:
+		cmd += " XOR";
+		break;
+	case 5:
+		cmd += " NAND";
+		break;
+	default:
+		cmd += " XNOR";
 	}
 
 	PROCESS_INFORMATION p_info;
@@ -103,10 +116,17 @@ std::string Core::Bitshifter(const std::string& num1, const std::string& num2, i
 
 	switch (operation)
 	{
-		case 7:   cmd += " LEFT";	 break;
-		case 8:	  cmd += " RIGHT";	 break;
-		case 9:	  cmd += " ROT_L";	 break;
-		case 10:  cmd += " ROT_R";   break;
+	case 7:
+		cmd += " LEFT";
+		break;
+	case 8:
+		cmd += " RIGHT";
+		break;
+	case 9:
+		cmd += " ROT_L";
+		break;
+	default:
+		cmd += " ROT_R";
 	}
 
 	PROCESS_INFORMATION p_info;

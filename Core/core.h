@@ -35,4 +35,4 @@ namespace Core
 	std::string Search(const std::string& query, const std::string& querySize);
 }
 
-#endif //CORE_H
+#endif // CORE_H

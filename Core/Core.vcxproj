@@ -163,7 +163,6 @@
     <ClCompile Include="core.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".gitignore" />
     <None Include="python\databus.tmp" />
     <None Include="scripts\bitwise.py" />
     <None Include="scripts\crawler.py" />
